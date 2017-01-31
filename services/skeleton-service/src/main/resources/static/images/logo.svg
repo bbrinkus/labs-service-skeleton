@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="95px" height="119px" viewBox="0 0 95 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo-with-name-(light)" transform="translate(-261.000000, -66.000000)">
+            <g id="Code" transform="translate(263.000000, 68.000000)">
+                <g id="S" transform="translate(72.000000, 24.000000)">
+                    <circle id="Oval-2" fill="#1BA5B7" cx="9.5" cy="9.5" r="9.5"></circle>
+                    <path d="M9.5,43 C14.7467051,43 19,38.7467051 19,33.5 C19,28.2532949 14.7467051,24 9.5,24 C4.25329488,24 0,28.2532949 0,33.5 C0,38.7467051 4.25329488,43 9.5,43 Z" id="Oval-2" fill="#FE414D"></path>
+                    <circle id="Oval-2" fill="#FE414D" cx="9.5" cy="57.5" r="9.5"></circle>
+                </g>
+                <g id="B" transform="translate(48.000000, 0.000000)">
+                    <rect id="Rectangle-2" fill="#FE414D" x="0" y="72" width="19" height="43" rx="9.5"></rect>
+                    <path d="M9.5,43 C14.7467051,43 19,38.7467051 19,33.5 C19,28.2532949 14.7467051,24 9.5,24 C4.25329488,24 0,28.2532949 0,33.5 C0,38.7467051 4.25329488,43 9.5,43 Z" id="Oval-2-Copy" fill="#FE414D"></path>
+                    <path d="M9.5,19 C14.7467051,19 19,14.7467051 19,9.5 C19,4.25329488 14.7467051,0 9.5,0 C4.25329488,0 0,4.25329488 0,9.5 C0,14.7467051 4.25329488,19 9.5,19 Z" id="Oval-2-Copy" fill="#1BA5B7"></path>
+                    <path d="M9.5,67 C14.7467051,67 19,62.7467051 19,57.5 C19,52.2532949 14.7467051,48 9.5,48 C4.25329488,48 0,52.2532949 0,57.5 C0,62.7467051 4.25329488,67 9.5,67 Z" id="Oval-2" fill="#FE414D"></path>
+                </g>
+                <g id="A" transform="translate(24.000000, 24.000000)">
+                    <rect id="Rectangle-2" fill="#FE414D" x="0" y="24" width="19" height="43" rx="9.5"></rect>
+                    <ellipse id="Oval-2-Copy" fill="#1BA5B7" cx="9.5" cy="9.5" rx="9.5" ry="9.5"></ellipse>
+                </g>
+                <g id="L" transform="translate(9.500000, 57.500000) scale(1, -1) translate(-9.500000, -57.500000) ">
+                    <rect id="Rectangle-2" fill="#1BA5B7" x="0" y="48" width="19" height="43" rx="9.5"></rect>
+                    <path d="M9.5,43 C14.7467051,43 19,38.7467051 19,33.5 C19,28.2532949 14.7467051,24 9.5,24 C4.25329488,24 0,28.2532949 0,33.5 C0,38.7467051 4.25329488,43 9.5,43 Z" id="Oval-2-Copy" fill="#FE414D"></path>
+                    <path d="M9.5,19 C14.7467051,19 19,14.7467051 19,9.5 C19,4.25329488 14.7467051,0 9.5,0 C4.25329488,0 0,4.25329488 0,9.5 C0,14.7467051 4.25329488,19 9.5,19 Z" id="Oval-2-Copy" fill="#FE414D"></path>
+                    <path d="M9.5,115 C14.7467051,115 19,110.746705 19,105.5 C19,100.253295 14.7467051,96 9.5,96 C4.25329488,96 0,100.253295 0,105.5 C0,110.746705 4.25329488,115 9.5,115 Z" id="Oval-2" fill="#1BA5B7"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

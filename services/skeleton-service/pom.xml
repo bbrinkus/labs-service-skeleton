@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.brinkus.labs</groupId>
+        <artifactId>labs-service-skeleton-services</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>com.brinkus.labs</groupId>
+    <artifactId>skeleton-service</artifactId>
+    <packaging>jar</packaging>
+
+    <name>skeleton-service</name>
+    <description>Skeleton Service</description>
+
+    <properties>
+        <main.class>com.brinkus.labs.skeleton.boot.Application</main.class>
+        <docker.image.name>${docker.user}/${project.artifactId}</docker.image.name>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.brinkus.labs</groupId>
+            <artifactId>labs-cloud-starter-service</artifactId>
+            <!-- remove the exclusions to enable eureka discovery client -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-eureka-server</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-ribbon</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-config-client</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Test dependencies -->
+
+        <dependency>
+            <groupId>com.brinkus.labs</groupId>
+            <artifactId>labs-cloud-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>api-service</finalName>
+
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>static/**</exclude>
+                </excludes>
+            </resource>
+
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>static/**</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+
+        <plugins>
+
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <configuration>
+                    <file>${project.build.outputDirectory}/banner.txt</file>
+                    <replacements>
+                        <replacement>
+                            <token>version</token>
+                            <value>${build.version}</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <imageName>${docker.image.name}</imageName>
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
+                    <serverId>docker-hub</serverId>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>docker-image-build</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>docker-image-tag-latest</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>tag</goal>
+                        </goals>
+                        <configuration>
+                            <image>${docker.image.name}</image>
+                            <newName>${docker.image.name}:latest</newName>
+                            <pushImage>true</pushImage>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${main.class}</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <version>${jrebel-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

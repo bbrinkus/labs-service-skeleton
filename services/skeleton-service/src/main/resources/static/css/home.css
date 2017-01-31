@@ -1,0 +1,74 @@
+/* droid-sans-regular - latin */
+@font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/droid-sans-v6-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Droid Sans'), local('DroidSans'),
+    url('../fonts/droid-sans-v6-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/droid-sans-v6-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/droid-sans-v6-latin-regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/droid-sans-v6-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/droid-sans-v6-latin-regular.svg#DroidSans') format('svg'); /* Legacy iOS */
+}
+
+/* droid-sans-700 - latin */
+@font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/droid-sans-v6-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Droid Sans Bold'), local('DroidSans-Bold'),
+    url('../fonts/droid-sans-v6-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/droid-sans-v6-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/droid-sans-v6-latin-700.woff') format('woff'), /* Modern Browsers */ url('../fonts/droid-sans-v6-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/droid-sans-v6-latin-700.svg#DroidSans') format('svg'); /* Legacy iOS */
+}
+
+body {
+    line-height: 1;
+}
+
+html,
+body,
+div,
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#header {
+    background-color: #002D40;
+    padding: 14px 14px 6px;
+}
+
+#logo {
+    height: 40px;
+}
+
+#container {
+    line-height: 1;
+    font-family: "Droid Sans", sans-serif;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#container a {
+    color: #002D40;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 10px 0 10px 0;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+#container a:hover {
+    text-decoration: underline;
+}
